@@ -1,0 +1,26 @@
+// Storing data in sessionStorage
+const userName = 'Rachel';
+const userId = '007';
+
+// Convert userId string to a number
+const numericUserId = parseInt(userId, 10);
+
+sessionStorage.setItem('name', userName);
+sessionStorage.setItem('userId', userId);
+
+// Retrieving data from sessionStorage
+const storedName = sessionStorage.getItem('name');
+const storedUserId = parseInt(sessionStorage.getItem('userId'), 10);
+
+console.log('Stored Name:', storedName);
+console.log('Stored UserId:', storedUserId);
+
+// Short syntax to get data from sessionStorage
+const shortSyntaxName = sessionStorage.name;
+const shortSyntaxUserId = parseInt(sessionStorage.userId, 10);
+
+console.log('Short Syntax - Name:', shortSyntaxName);
+console.log('Short Syntax - UserId:', shortSyntaxUserId);
+
+// Removing all items from sessionStorage
+sessionStorage.clear();
