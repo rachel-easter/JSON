@@ -1,0 +1,99 @@
+// Function to store user data directly in local storage
+function storeUser(userData) {
+  localStorage.setItem('userData', JSON.stringify({ [userData.id]: userData }));
+}
+
+// Function to update the "active" field from 0 to 1 for a specific user
+function updateUserActive(userId) {
+  // Retrieve existing data from local storage
+  const existingData = JSON.parse(localStorage.getItem('userData')) || {};
+
+  // Check if the user with the specified ID exists
+  if (existingData[userId]) {
+    // Update the "active" field to 1
+    existingData[userId].active = 1;
+
+    // Store the updated data back in local storage
+    localStorage.setItem('userData', JSON.stringify(existingData));
+
+    console.log(`User with ID ${userId} updated successfully.`);
+  } else {
+    console.error('User not found with ID:', userId);
+  }
+}
+
+// User data
+const user1 = {
+  id: 100,
+  name: 'Rachel',
+  active: 0,
+};
+
+// Store the user data
+storeUser(user1);
+
+// Verify that the user data is stored
+const storedDataBeforeUpdate = JSON.parse(localStorage.getItem('userData'));
+console.log('Stored User Data (Before Update):', storedDataBeforeUpdate);
+
+// Update "active" field for the user with ID 100
+updateUserActive(100);
+
+// Verify that the user data is updated
+const storedDataAfterUpdate = JSON.parse(localStorage.getItem('userData'));
+console.log('Stored User Data (After Update):', storedDataAfterUpdate);
+-------------------------------------->
+for the specific userId=102
+// Function to store user data directly in local storage
+function storeUser(userData) {
+  const existingData = JSON.parse(localStorage.getItem('userData')) || {};
+  existingData[userData.id] = userData;
+  localStorage.setItem('userData', JSON.stringify(existingData));
+}
+
+// Function to update the "active" field from 0 to 1 for a specific user
+function updateUserActive(userId) {
+  const existingData = JSON.parse(localStorage.getItem('userData')) || {};
+  if (existingData[userId]) {
+    existingData[userId].active = 1;
+    localStorage.setItem('userData', JSON.stringify(existingData));
+    console.log(`User with ID ${userId} updated successfully.`);
+  } else {
+    console.error('User not found with ID:', userId);
+  }
+}
+
+// User data
+const user1 = {
+  id: 100,
+  name: 'Rachel',
+  active: 0,
+};
+
+const user2 = {
+  id: 101,
+  name: 'John',
+  active: 0,
+};
+
+const user3 = {
+  id: 102,
+  name: 'Alice',
+  active: 0,
+};
+
+// Store multiple user data
+storeUser(user1);
+storeUser(user2);
+storeUser(user3);
+
+// Verify that the user data is stored
+const storedDataBeforeUpdate = JSON.parse(localStorage.getItem('userData'));
+console.log('Stored User Data (Before Update):', storedDataBeforeUpdate);
+
+// Update "active" field for the user with ID 102
+updateUserActive(102);
+
+// Verify that the user data is updated
+const storedDataAfterUpdate = JSON.parse(localStorage.getItem('userData'));
+console.log('Stored User Data (After Update):', storedDataAfterUpdate);
