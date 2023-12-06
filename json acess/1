@@ -1,0 +1,33 @@
+//JSON Data are stored as key and value:
+
+let person = {
+    "name": "Rachel",
+    "age": 20,
+    "isStudent": true,
+    "address": {
+        "city": "Sattur",
+        "pinCode": "626203"
+    }
+};
+// Accessing top-level fields
+let personName = person.name;
+let personAge = person.age;
+let isStudent = person.isStudent;
+
+console.log("Name:", personName);
+console.log("Age:", personAge);
+console.log("Is Student:", isStudent);
+
+// Accessing nested fields
+let city = person.address.city;
+let zipCode = person.address.pinCode;
+
+console.log("City:", city);
+console.log("Zip Code:", zipCode);
+
+//method2:using bracket notation
+//this used if the propertyname has the any special character :
+let PersonName = person["name"];
+let PinCode = person["address"]["pinCode"];
+console.log(PersonName);
+console.log(PinCode);
