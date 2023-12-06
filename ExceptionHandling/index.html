@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cab Fare Calculator</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Cab Fare Calculator</h2>
+        
+        <form id="cabForm">
+            <div class="mb-3">
+                <label for="numKms" class="form-label">Enter Number of Kilometers:</label>
+                <input type="number" class="form-control" id="numKms" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="cabType" class="form-label">Select Cab Type:</label>
+                <select class="form-select" id="cabType" required>
+                    <option value="micro">Micro</option>
+                    <option value="mini">Mini</option>
+                    <option value="prime">Prime</option>
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <label for="discountCode" class="form-label">Enter Discount Code (if any):</label>
+                <input type="text" class="form-control" id="discountCode">
+            </div>
+            
+            <button type="button" class="btn btn-primary" onclick="calculateFare()">Calculate Fare</button>
+        </form>
+
+        <div id="result" class="mt-4"></div>
+    </div>
+    <!-- Bootstrap JS and Popper.js (required for Bootstrap) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js">
+   <script src="index.js"></script>
+</body>
+</html>
+      
