@@ -1,0 +1,9 @@
+// Deleting a password property from JSON object:
+const details = {
+  "Username": "rachel@gmail.com",
+  "password": 1234
+};
+
+delete details.password;
+
+console.log(details);
