@@ -1,0 +1,82 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wish List </title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+        h1 {
+            color: blue;
+         
+        }
+        .form-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .table th, .table td {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center mb-4">Wish List</h1>
+            </div>
+        </div>
+
+        <!-- Form to add or update a product -->
+        <div class="row mb-4">
+            <div class="col-md-6 offset-md-3 form-container">
+                <form id="productForm" class="form-inline">
+                    <div class="form-group mb-2">
+                        <label for="productName" class="mr-2">Product Name:</label>
+                        <input type="text" id="productName" class="form-control" required>
+                    </div>
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="productPrice" class="mr-2">Product Price:</label>
+                        <input type="number" id="productPrice" class="form-control" required>
+                    </div>
+                    <button type="button" id="addUpdateButton" class="btn btn-primary mb-2" onclick="addOrUpdateProduct()">Add Product</button>
+                    <button type="button" id="cancelUpdateButton" class="btn btn-secondary mb-2" style="display:none;" onclick="cancelUpdate()">Cancel</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Table to display the list of products -->
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productList">
+                        <!-- Product entries will be added here dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
