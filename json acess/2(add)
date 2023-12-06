@@ -1,0 +1,19 @@
+// Adding fields to JSON data:
+const details = {
+  "name": "Rachel",
+  "class": "mca",
+  "roll-number": 7,
+  "address": {
+    "district": "virudhunagar"
+  }
+};
+// Nested adding using dot notation:
+details.student = true;
+
+// Nested adding:
+details["address"]["pincode"] = 626203;
+
+// Normal approach:
+details["reg-number"] = 100;
+
+console.log(details);
