@@ -1,0 +1,12 @@
+//serialization and deserialization(JSON methods)
+const details = {
+  "Username": "rachel@gmail.com",
+  "password": 1234
+};
+//convert object  to string:
+let jsonString = JSON.stringify(details);
+//convert the string to object:
+let newPerson = JSON.parse(jsonString);
+
+console.log(jsonString);
+console.log(newPerson);
